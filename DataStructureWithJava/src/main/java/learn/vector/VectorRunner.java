@@ -7,7 +7,5 @@ public class VectorRunner {
         vc.add("Análise 00");
         vc.add("Análise 01");
         vc.add("Análise 02");
-        vc.add("Análise 03");
-        vc.add("Análise 04");
     }
 }
