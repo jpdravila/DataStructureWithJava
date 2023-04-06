@@ -28,9 +28,24 @@ public class Vector {
         return false;
     }
 
+    public boolean adiciona(int posicao, String elemento){
+        if(!(posicao >= 0 && posicao < tamanho)){
+            throw new IllegalArgumentException("Posição inválida");
+        }
+
+        //Movendo todos elementos
+        for(int i = this.tamanho - 1; i >= posicao; i--){
+            this.elementos[i+1] = this.elementos[i];
+        }
+        this.elementos[posicao] = elemento;
+        this.tamanho++;
+
+        return true;
+    }
+
     public  String busca(int posicao){
         if(!(posicao >= 0 && posicao < tamanho)){
-            throw new IllegalArgumentException("Posição inválida para esse dado");
+            throw new IllegalArgumentException("Posição inválida");
         }
         return this.elementos[posicao];
     }
@@ -48,4 +63,24 @@ public class Vector {
         return this.tamanho;
     }
 
+
+    @Override
+    public String toString() {
+
+        StringBuilder s = new StringBuilder();
+        s.append("[");
+
+        for (int i=0; i<this.tamanho-1; i++){
+            s.append(this.elementos[i]);
+            s.append(", ");
+        }
+
+        if (this.tamanho>0){
+            s.append(this.elementos[this.tamanho-1]);
+        }
+
+        s.append("]");
+
+        return s.toString();
+    }
 }
