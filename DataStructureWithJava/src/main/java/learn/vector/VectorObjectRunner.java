@@ -2,15 +2,15 @@ package learn.vector;
 
 public class VectorObjectRunner {
     public static void main(String[] args){
-        VectorObject vo = new VectorObject(5);
+        var lt = new List<String>(10);
 
-        vo.add(3);
-        vo.add(2);
-        vo.add(1);
-        vo.add(0);
+        lt.add("João");
+        lt.add("Pedro");
+        lt.add("de");
+        lt.add("Ávila");
+        lt.add("Santos");
 
-        System.out.println(vo);
-        System.out.println(vo.tamanho());
+        System.out.println(lt);
 
     }
 }
